@@ -7,10 +7,10 @@
     "start": "next start"
   },
   "dependencies": {
-    "next": "13.4.7",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "openai": "^3.2.1",
-    "tailwindcss": "^3.2.4"
+    "next": "^13.4.7",   // Asegúrate de que Next.js esté actualizado
+    "react": "^18.2.0",  // Asegúrate de que React esté actualizado
+    "react-dom": "^18.2.0",  // Asegúrate de que React DOM esté actualizado
+    "tailwindcss": "^3.2.4",  // Version correcta de Tailwind CSS
+    "openai": "^3.2.1"  // Si usas OpenAI
   }
 }
