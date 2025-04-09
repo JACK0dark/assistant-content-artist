@@ -25,23 +25,28 @@ export default function Assistant() {
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-10 p-4">
-      <div className="bg-white rounded shadow p-4 max-h-[500px] overflow-y-auto space-y-2">
+    <div className="bg-white p-4 rounded-lg w-full max-w-xl mx-auto">
+      <div className="bg-gray-100 p-4 rounded-lg h-96 overflow-y-auto space-y-4 mb-4">
         {messages.map((msg, i) => (
-          <div key={i} className={msg.role === "user" ? "text-right text-blue-600" : "text-left text-gray-800"}>
-            {msg.content}
+          <div key={i} className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}>
+            <div className={`max-w-xs p-3 rounded-lg ${msg.role === "user" ? "bg-blue-500 text-white" : "bg-gray-800 text-white"}`}>
+              {msg.content}
+            </div>
           </div>
         ))}
       </div>
-      <div className="flex mt-4 gap-2">
+      <div className="flex gap-2">
         <input
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
-          className="border p-2 flex-1 rounded"
+          className="border p-3 flex-1 rounded-lg"
           placeholder="Escribe tu idea..."
         />
-        <button onClick={sendMessage} disabled={loading} className="bg-blue-500 text-white px-4 rounded">
+        <button
+          onClick={sendMessage}
+          disabled={loading}
+          className="bg-purple-600 text-white px-6 py-3 rounded-lg">
           {loading ? "Enviando..." : "Enviar"}
         </button>
       </div>
